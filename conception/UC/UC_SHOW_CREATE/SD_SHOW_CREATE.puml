@@ -1,0 +1,55 @@
+@startuml SD_SHOW_CREATE
+
+    title SD_SHOW_CREATE
+    hide footbox
+
+    Actor "Admin" as A
+    Participant ":ShowCreateView" as SV
+    Participant ":ShowCreateView" as SV2
+    Participant ":Routeur" as R
+    Participant ":ShowController" as SC
+    Participant ":ShowController" as SC2
+    Participant "Show" as S <<class>>
+    Participant "show : Show " as SS
+
+    -> R : [GET]/show/create/
+    create SC
+    R -> SC : create()
+    create SV
+    R -> SV : new()
+
+    A -> SV : setTitle(val: String)
+    A -> SV : setDescription(val: String)
+    A -> SV : setDuration(val: int)
+    A -> SV : setPerformers(val: String[])
+    A -> SV : setPicture(val: String)
+    alt 
+    A -> SV : create()
+    SV -> R : [POST]/show/create{...}
+    create SC2
+    R -> SC2 : create(...)
+    create SS
+    SC2 -> SS : new(...)
+    SC2 -> SS : validateData(): Error[]
+    SS --> SC2 : errors
+
+    alt errors == []
+
+        SC2 -> SS : save()
+        SC2 -> R : [GET]/show/list
+        ref over R : SD_SHOW_LIST
+
+    else
+    |||
+        create SV2
+        SC2 -> SV2 : new(errors)
+        A -> SV2 : /*retry/*
+
+    end
+    else 
+    A -> SV : back()
+    SV -> R : [GET]/show/list
+    ref over R : SD_SHOW_LIST
+    end
+
+@enduml

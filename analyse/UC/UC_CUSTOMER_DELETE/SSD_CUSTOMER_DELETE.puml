@@ -1,0 +1,16 @@
+@startuml SSD_CUSTOMER_DELETE
+    title SDD_CUSTOMER_DELETE
+    hide footbox 
+    Actor "Admin" as A  
+    Participant "Systeme" as S 
+    S -> A : show confirmation page 
+    alt 
+    A -> S : click confirm button
+    S -> S : delete
+    S -> S : delete related reservations
+    else
+    A -> S : click cancel button
+    end
+    ref over A,S : SSD_CUSTOMER_LIST
+    
+@enduml

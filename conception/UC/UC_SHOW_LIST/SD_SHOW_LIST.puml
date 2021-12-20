@@ -1,0 +1,31 @@
+@startuml SD_SHOW_LIST
+title SD_SHOW_LIST
+hide footbox
+Actor "Admin" as A
+Participant ":ShowListView" as SL
+Participant ":Routeur" as R
+Participant ":ShowController" as SC
+Participant "Show" as S <<class>>
+-> R : [GET]/show/list/[<filter>]
+create SC
+R -> SC : list(filter : string = "") 
+SC -> S : getFiltered(filter) : Show[]
+S --> SC : shows
+create SL 
+SC -> SL : new(shows)
+alt 
+A -> SL : setFilter(val : string)
+A -> SL : applyFilter()
+SL -> R : [GET]/show/list/<filter>
+ref over R : SD_SHOW_LIST
+else 
+A -> SL : read(idShow)
+SL -> R : [GET]/show/read/<idShow>
+ref over R : SD_SHOW_READ
+else 
+A -> SL : create()
+SL -> R : [GET]/show/create
+ref over R : SD_SHOW_CREATE
+end 
+
+@enduml

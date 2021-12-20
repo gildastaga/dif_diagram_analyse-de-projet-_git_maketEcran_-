@@ -1,0 +1,44 @@
+@startuml SD_CUSTOMER_CREATE
+    hide footbox
+    title SD_CUSTOMER_CREATE
+    Actor "Admin" as A 
+    Participant ":CustomerCreateView" as CV
+       Participant ":CustomerCreateView" as CV2
+    Participant ":Routeur" as R
+    Participant ":CustomerController" as C
+      Participant ":CustomerController" as C2
+      Participant "Customer" as c <<class>>
+      Participant "customer : Customer" as cc
+
+    -> R : [GET]/customer/create/
+    create C
+    R -> C : create()
+    create CV
+    C -> CV : new()
+    A -> CV : setFirstName(val : string)
+    A -> CV: setLastName(val : string)
+    A -> CV : setAddress(val : string)
+    A -> CV : setCity(val : string)
+    A -> CV : setZIP(val : string)
+    A -> CV : setCountry(val : string)
+    A -> CV : setDateOfBirth(val : string)
+    A -> CV : create()
+    CV -> R : [GET]/customer/create {...}
+    create C2 
+    R -> C2 : create(...)
+    create cc
+    C2 -> cc : new(...)
+    C2 -> cc : validateData() : Error[]
+    cc --> C2 : errors
+    alt errors == []
+        C2 -> cc : save()
+        C2 -> R : [GET]/customer/list
+        ref over R : SD_CUSTOMER_LIST
+    else
+    |||
+        create CV2
+        C2 -> CV2 : new (errors,...)
+        A -> CV2 : /* retry */
+    end
+
+@enduml

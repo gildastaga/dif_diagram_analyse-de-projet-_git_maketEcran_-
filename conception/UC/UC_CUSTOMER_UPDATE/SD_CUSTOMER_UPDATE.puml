@@ -1,0 +1,69 @@
+@startuml SD_CUSTOMER_UPDATE
+
+    title SD_CUSTOMER_UPDATE
+
+    hide footbox
+    skinparam shadowing false
+
+    Actor "Admin" as A
+    Participant ":CustomerUpdateView" as CUV
+    Participant ":CustomerUpdateView" as CUV1
+    Participant ":Routeur" as R
+    Participant ":CustomerController" as CC
+    Participant ":CustomerController" as CC1
+    Participant "Customer" as ClC <<class>>
+    Participant "customer:Customer" as C 
+
+    A->R : [GET]/customer/update/<idCustomer>
+
+    create CC
+    R->CC : update(idCustomer)
+    CC->ClC : getCustomer(idCustomer) : Customer
+    ClC-->CC : customer
+
+    create CUV
+    CC->CUV : new(customer)
+
+    A->CUV : setFirstName(firstName: String)
+    A->CUV : setLastName(lastName: String)
+    A->CUV : setAdress(adress: String)
+    A->CUV : setbirthDate(birthDate: String)
+    A->CUV : setCity(city: String)
+    A->CUV : setCountry(country: String)
+    
+    alt
+        A->CUV : update()
+    
+        CUV->R : [POST]/customer/update/<idCustomer>{...}
+        create CC1
+        R->CC1 : update(idCustomer,...)
+        CC1->ClC : getCustomer(idCustomer)
+        create C
+         ClC->C  :new(...) 
+         ClC-->CC1:customer
+         CC1->C: set (idCustomer,...)
+         CC1->C: validateData() : error []
+         C-->CC1:errors 
+        alt errors==[ ]
+            CC1->C : save()
+            CC1->R : [GET]/customer/read/<idCustomer>
+
+        else else
+            create CUV1
+                CC1->CUV1:new(errors)
+            
+                A->CUV1 : :/*retry */
+        end
+
+
+    else cancel
+
+        A->CUV: cancel()
+        CUV->R: [GET]/customer/read/<idCustomer>
+        
+
+    end
+        ref over R : SD_CUSTOMER_READ
+
+
+@enduml

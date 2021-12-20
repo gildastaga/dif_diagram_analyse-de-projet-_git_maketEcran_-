@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="363px" preserveAspectRatio="none" style="width:282px;height:363px;" version="1.1" viewBox="0 0 282 363" width="282px" zoomAndPan="magnify"><defs/><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="204" x="39.75" y="24.5332">SSD_RESERVATIONS_DELETE</text><rect fill="#FFFFFF" height="124.4063" style="stroke: #000000; stroke-width: 2.0;" width="257.5" x="13" y="162.5703"/><rect fill="#FFFFFF" height="32.3516" style="stroke: none; stroke-width: 1.0;" width="257.5" x="13" y="254.625"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="45" x2="45" y1="115.2188" y2="351.6797"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="216.5" x2="216.5" y1="115.2188" y2="351.6797"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="39" x="23" y="112.1426">Admin</text><ellipse cx="45.5" cy="44.6094" fill="#FEFECE" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M45.5,52.6094 L45.5,79.6094 M32.5,60.6094 L58.5,60.6094 M45.5,79.6094 L32.5,94.6094 M45.5,79.6094 L58.5,94.6094 " fill="none" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="60" x="186.5" y="82.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="193.5" y="104.1426">System</text><polygon fill="#A80036" points="56.5,143.5703,46.5,147.5703,56.5,151.5703,52.5,147.5703" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="50.5" x2="215.5" y1="147.5703" y2="147.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="147" x="62.5" y="142.7139">display confirmation page</text><path d="M13,162.5703 L74,162.5703 L74,170.5703 L64,180.5703 L13,180.5703 L13,162.5703 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="124.4063" style="stroke: #000000; stroke-width: 2.0;" width="257.5" x="13" y="162.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="16" x="28" y="177.0654">alt</text><polygon fill="#A80036" points="204.5,199.2734,214.5,203.2734,204.5,207.2734,208.5,203.2734" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="45.5" x2="210.5" y1="203.2734" y2="203.2734"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="113" x="52.5" y="198.417">click confirm button</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="216.5" x2="258.5" y1="233.625" y2="233.625"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="258.5" x2="258.5" y1="233.625" y2="246.625"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="217.5" x2="258.5" y1="246.625" y2="246.625"/><polygon fill="#A80036" points="227.5,242.625,217.5,246.625,227.5,250.625,223.5,246.625" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="35" x="223.5" y="228.7686">delete</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="13" x2="270.5" y1="255.625" y2="255.625"/><polygon fill="#A80036" points="204.5,274.9766,214.5,278.9766,204.5,282.9766,208.5,278.9766" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="45.5" x2="210.5" y1="278.9766" y2="278.9766"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="109" x="52.5" y="274.1201">click cancel button</text><rect fill="#FFFFFF" height="42.7031" style="stroke: #000000; stroke-width: 2.0;" width="229.5" x="20" y="293.9766"/><polygon fill="#EEEEEE" points="20,293.9766,82,293.9766,82,301.9766,72,311.9766,20,311.9766,20,293.9766" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="17" x="33" y="309.4717">ref</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="159" x="55.25" y="329.4717">SSD_RESERVATION_LIST</text><!--
+@startuml SSD_RESERVATIONS_DELETE
+
+title SSD_RESERVATIONS_DELETE
+
+skinparam shadowing false
+hide footbox
+
+actor Admin as a
+participant System as S
+
+
+
+
+
+S -> a : display confirmation page 
+
+alt 
+
+a -> S : click confirm button
+S -> S : delete
+
+else 
+
+a -> S : click cancel button
+
+end 
+
+
+
+ref over a,S : SSD_RESERVATION_LIST
+
+
+
+@enduml
+
+PlantUML version 1.2019.09(Mon Aug 26 18:19:51 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_221-b11
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: fr
+Country: BE
+--></g></svg>

@@ -1,0 +1,20 @@
+@startuml SD_CUSTOMER_LIST
+hide footbox
+   Actor "Admin" as U
+   participant "Systeme" as S
+   title SSD_CUSTOMER_LIST
+   S -> S : get filtered list of customers
+   S -> U : display customers found
+   alt 
+    U -> S : give filter
+    U -> S : click apply button
+    ref over U,S : SSD_CUSTOMER_LIST 
+   else 
+   U -> S : click read button
+   ref over U,S : SSD_CUSTOMER_READ
+   else
+   U -> S : click add new customer button
+   ref over U,S : SSD_CUSTOMER_CREATE
+   end
+    
+@enduml

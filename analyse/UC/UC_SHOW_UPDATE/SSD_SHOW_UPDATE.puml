@@ -1,0 +1,35 @@
+@startuml SSD_SHOW_UPDATE
+
+    title SSD_SHOW_UPDATE
+
+    skinparam shadowing false
+    hide footbox
+
+    actor Admin as A
+    participant System as S
+
+    S -> A : Show update page
+    
+    A -> S : Give title
+    A -> S : Give description
+    A -> S : Give duration
+    A -> S : Give picture
+    A -> S : Give performer(s)
+    A -> S : Click "Update" button
+    S -> S : Validate
+
+    alt no errors 
+        
+        S -> S : Update show
+        ref over A,S : SSD_SHOW_READ
+
+    else else
+
+        S -> A : Display errors
+        A -> S : */retry*/
+
+    end
+
+    
+
+@enduml

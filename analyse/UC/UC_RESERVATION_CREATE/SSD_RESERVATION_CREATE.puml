@@ -1,0 +1,35 @@
+@startuml SSD_RESERVATION_CREATE
+
+    title SSD_RESERVATION_CREATE
+
+    hide footbox
+    skinparam shadowing false
+
+    actor ADMIN as A
+    participant SYSTEM as S
+
+    S->A :  display reservation page
+    A->S : choose show
+    A->S: choose performance of this show
+    A->S: choose row and number for each seat
+
+    A->S : click confirm button
+
+    S->S : validate
+
+    alt no errors
+        loop
+        S->S : create new performance
+        end
+        S->A : display succes message
+        ref over A,S : SSD_RESERVATION_LIST
+
+    else else
+
+        S->A : display error(s)
+        A->S : */ retry */
+
+
+    end
+
+@enduml

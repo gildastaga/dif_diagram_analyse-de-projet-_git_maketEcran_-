@@ -1,0 +1,36 @@
+@startuml SSD_SHOW_CREATE
+
+    title SSD_SHOW_CREATE
+
+    hide footbox
+    skinparam shadowing false
+
+    actor ADMIN as A
+    participant SYSTEM as S
+
+    S->A : Display " Show create page" page
+    A->S : Give title
+    A->S : Give description
+    A->S : Give duration
+    A->S : Give startTime
+    A->S : Give dateOfShow
+    A->S : Give performers
+    A->S : Give picture
+    alt
+    A->S : Click create button
+    S->S : validate
+
+    alt no errors
+        S->S : Create new show
+           ref over A,S : SSD_SHOW_LIST
+    else else
+        S->A : Show error(s)
+        A->S : */ retry */
+    end 
+    else 
+        A -> S : click back button
+           ref over A,S : SSD_SHOW_LIST
+        end
+        
+
+@enduml

@@ -1,0 +1,27 @@
+@startuml SSD_CUSTOMER_READ
+
+title SSD_CUSTOMER_READ
+
+hide footbox
+actor Admin as A
+participant System as S
+
+A <- S : Display Customer data
+
+
+alt 
+A -> S : Click DELETE button
+
+ref over S : SSD_CUSTOMER_DELETE
+else
+A -> S : click UPDATE  button
+ref over S : SSD_CUSTOMER_UPDATE
+
+else
+A -> S : click reservation list button
+ref over S : SSD_RESERVATION_LIST
+else
+A -> S : click back button
+ref over S : SSD_CUSTOMER_LIST
+end
+@enduml

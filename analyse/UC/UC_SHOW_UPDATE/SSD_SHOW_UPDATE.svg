@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="602px" preserveAspectRatio="none" style="width:299px;height:602px;" version="1.1" viewBox="0 0 299 602" width="299px" zoomAndPan="magnify"><defs/><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="142" x="79.25" y="24.5332">SSD_SHOW_UPDATE</text><rect fill="#FFFFFF" height="185.9453" style="stroke: #000000; stroke-width: 2.0;" width="274.5" x="13" y="388.0313"/><rect fill="#FFFFFF" height="76.5391" style="stroke: none; stroke-width: 1.0;" width="274.5" x="13" y="497.4375"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="45" x2="45" y1="115.2188" y2="590.9766"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="193.5" x2="193.5" y1="115.2188" y2="590.9766"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="39" x="23" y="112.1426">Admin</text><ellipse cx="45.5" cy="44.6094" fill="#FEFECE" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M45.5,52.6094 L45.5,79.6094 M32.5,60.6094 L58.5,60.6094 M45.5,79.6094 L32.5,94.6094 M45.5,79.6094 L58.5,94.6094 " fill="none" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="60" x="163.5" y="82.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="170.5" y="104.1426">System</text><polygon fill="#A80036" points="56.5,143.5703,46.5,147.5703,56.5,151.5703,52.5,147.5703" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="50.5" x2="192.5" y1="147.5703" y2="147.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="107" x="62.5" y="142.7139">Show update page</text><polygon fill="#A80036" points="181.5,173.9219,191.5,177.9219,181.5,181.9219,185.5,177.9219" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="45.5" x2="187.5" y1="177.9219" y2="177.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="50" x="52.5" y="173.0654">Give title</text><polygon fill="#A80036" points="181.5,204.2734,191.5,208.2734,181.5,212.2734,185.5,208.2734" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="45.5" x2="187.5" y1="208.2734" y2="208.2734"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="52.5" y="203.417">Give description</text><polygon fill="#A80036" points="181.5,234.625,191.5,238.625,181.5,242.625,185.5,238.625" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="45.5" x2="187.5" y1="238.625" y2="238.625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="75" x="52.5" y="233.7686">Give duration</text><polygon fill="#A80036" points="181.5,264.9766,191.5,268.9766,181.5,272.9766,185.5,268.9766" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="45.5" x2="187.5" y1="268.9766" y2="268.9766"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="68" x="52.5" y="264.1201">Give picture</text><polygon fill="#A80036" points="181.5,295.3281,191.5,299.3281,181.5,303.3281,185.5,299.3281" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="45.5" x2="187.5" y1="299.3281" y2="299.3281"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="98" x="52.5" y="294.4717">Give performer(s)</text><polygon fill="#A80036" points="181.5,325.6797,191.5,329.6797,181.5,333.6797,185.5,329.6797" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="45.5" x2="187.5" y1="329.6797" y2="329.6797"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="124" x="52.5" y="324.8232">Click "Update" button</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="193.5" x2="235.5" y1="360.0313" y2="360.0313"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="235.5" x2="235.5" y1="360.0313" y2="373.0313"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="194.5" x2="235.5" y1="373.0313" y2="373.0313"/><polygon fill="#A80036" points="204.5,369.0313,194.5,373.0313,204.5,377.0313,200.5,373.0313" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="47" x="200.5" y="355.1748">Validate</text><path d="M13,388.0313 L74,388.0313 L74,396.0313 L64,406.0313 L13,406.0313 L13,388.0313 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="185.9453" style="stroke: #000000; stroke-width: 2.0;" width="274.5" x="13" y="388.0313"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="16" x="28" y="402.5264">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="61" x="89" y="401.4502">[no errors]</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="193.5" x2="235.5" y1="428.7344" y2="428.7344"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="235.5" x2="235.5" y1="428.7344" y2="441.7344"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="194.5" x2="235.5" y1="441.7344" y2="441.7344"/><polygon fill="#A80036" points="204.5,437.7344,194.5,441.7344,204.5,445.7344,200.5,441.7344" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="75" x="200.5" y="423.8779">Update show</text><rect fill="#FFFFFF" height="42.7031" style="stroke: #000000; stroke-width: 2.0;" width="206.5" x="20" y="449.7344"/><polygon fill="#EEEEEE" points="20,449.7344,82,449.7344,82,457.7344,72,467.7344,20,467.7344,20,449.7344" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="17" x="33" y="465.2295">ref</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="118" x="64.25" y="485.2295">SSD_SHOW_READ</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="13" x2="287.5" y1="498.4375" y2="498.4375"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="18" y="509.8564">[else]</text><polygon fill="#A80036" points="56.5,531.625,46.5,535.625,56.5,539.625,52.5,535.625" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="50.5" x2="192.5" y1="535.625" y2="535.625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="80" x="62.5" y="530.7686">Display errors</text><polygon fill="#A80036" points="181.5,561.9766,191.5,565.9766,181.5,569.9766,185.5,565.9766" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="45.5" x2="187.5" y1="565.9766" y2="565.9766"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="44" x="52.5" y="561.1201">*/retry*/</text><!--
+@startuml SSD_SHOW_UPDATE
+
+    title SSD_SHOW_UPDATE
+
+    skinparam shadowing false
+    hide footbox
+
+    actor Admin as A
+    participant System as S
+
+    S -> A : Show update page
+    
+    A -> S : Give title
+    A -> S : Give description
+    A -> S : Give duration
+    A -> S : Give picture
+    A -> S : Give performer(s)
+    A -> S : Click "Update" button
+    S -> S : Validate
+
+    alt no errors 
+        
+        S -> S : Update show
+        ref over A,S : SSD_SHOW_READ
+
+    else else
+
+        S -> A : Display errors
+        A -> S : */retry*/
+
+    end
+
+    
+
+@enduml
+
+PlantUML version 1.2019.09(Mon Aug 26 18:19:51 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: fr
+Country: BE
+--></g></svg>

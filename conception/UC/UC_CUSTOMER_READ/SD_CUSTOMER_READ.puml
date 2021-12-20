@@ -1,0 +1,46 @@
+@startuml SD_CUSTOMER_READ
+
+title SD_CUSTOMER_READ
+
+hide footbox
+
+actor Admin as A
+participant ": CustomerReadView" as V
+participant ": Router" as R
+participant ": CustomerController" as C
+participant "Customer" as EC <<class>>
+
+-> R : [GET] /customer/read/<idCustomer>
+
+create C
+R -> C : read(idCustomer)
+
+
+C -> EC : getCustomer(idCustomer) :  Customer
+EC --> C : customer
+
+create V
+C -> V : new(customer)
+
+alt 
+A -> V : delete()
+
+V -> R : [GET] /customer/delete/<idCustomer>
+ref over R : SD_CUSTOMER_DELETE
+
+else
+A -> V : update()
+V -> R : [GET]/customer/update/<idCustomer>
+ref over R : SD_CUSTOMER_UPDATE
+
+else
+A -> V : list ()
+V -> R : [GET]/reservation/list/<idCustomer>
+ref over R : SD_RESERVATION_LIST
+else 
+A -> V : back()
+V -> R : [GET]/customer/list
+ref over R : SD_CUSTOMER_LIST
+end
+
+@enduml

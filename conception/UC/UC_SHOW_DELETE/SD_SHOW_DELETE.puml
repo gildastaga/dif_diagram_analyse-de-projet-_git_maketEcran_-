@@ -1,0 +1,36 @@
+@startuml SD_SHOW_DELETE
+title SD_SHOW_DELETE
+hide footbox
+Actor "Admin" as A
+Participant ":ShowDeleteView" as PV
+Participant ":Routeur" as R
+Participant ":ShowController" as PC
+Participant ":ShowController" as PC2
+Participant "Show"  as P <<class>>
+Participant "Show : Show" as p
+
+-> R : [GET]/show/delete/<idShow>
+create PC
+R -> PC : delete(idShow)
+PC -> P : getShow(idShow) : Show
+P --> PC : show
+create PV
+PC -> PV : new(show)
+alt
+A -> PV : confirm()
+PV -> R : [POST]/show/delete/<idShow>
+create PC2
+R -> PC2 : delete(idShow)
+PC2 -> P : getShow(idShow)
+create p
+P -> p : new()
+P --> PC2 : show
+PC2 -> p : delete ()
+p -> p : deleteRelatedPerformances()
+PC2 -> R : [GET]/show/list
+else
+A -> PV : cancel()
+PV -> R : [GET]/show/list
+end
+ref over R : SD_SHOW_LIST
+@enduml

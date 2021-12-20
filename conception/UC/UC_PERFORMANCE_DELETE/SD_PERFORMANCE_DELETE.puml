@@ -1,0 +1,36 @@
+@startuml SD_PERFORMANCE_DELETE
+title SD_PERFORMANCE_DELETE
+hide footbox
+Actor "Admin" as A
+Participant ":PerformanceDeleteView" as PV
+Participant ":Routeur" as R
+Participant ":PerformanceController" as PC
+Participant ":PerformanceController" as PC2
+Participant "Performance"  as P <<class>>
+Participant "performance : Performance" as p
+
+-> R : [GET]/performance/delete/<idPerf>
+create PC
+R -> PC : delete(idPerf)
+PC -> P : getPerformance(idPerf) : Performance
+P --> PC : performance
+create PV
+PC -> PV : new(performance)
+alt
+A -> PV : confirm()
+PV -> R : [POST]/performance/delete/<idPerf>
+create PC2
+R -> PC2 : delete(idPerf)
+PC2 -> P : getPerformance(idPerf)
+create p
+P -> p : new()
+P --> PC2 : performance
+PC2 -> p : delete ()
+p -> p : deleteRelatedReservation()
+PC2 -> R : [GET]/performance/list
+else
+A -> PV : cancel()
+PV -> R : [GET]/performance/list
+end
+ref over R : SD_PERFORMANCE_LIST
+@enduml

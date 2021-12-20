@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="604px" preserveAspectRatio="none" style="width:467px;height:604px;" version="1.1" viewBox="0 0 467 604" width="467px" zoomAndPan="magnify"><defs/><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="197" x="135.5" y="24.5332">SSD_RESERVATION_CREATE</text><rect fill="#FFFFFF" height="248.6484" style="stroke: #000000; stroke-width: 2.0;" width="442" x="13" y="327.3281"/><rect fill="#FFFFFF" height="61.7031" style="stroke: #000000; stroke-width: 2.0;" width="202" x="243" y="352.6797"/><rect fill="#FFFFFF" height="76.5391" style="stroke: none; stroke-width: 1.0;" width="442" x="13" y="499.4375"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="47" x2="47" y1="115.2188" y2="592.9766"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="288" x2="288" y1="115.2188" y2="592.9766"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="23" y="112.1426">ADMIN</text><ellipse cx="47" cy="44.6094" fill="#FEFECE" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M47,52.6094 L47,79.6094 M34,60.6094 L60,60.6094 M47,79.6094 L34,94.6094 M47,79.6094 L60,94.6094 " fill="none" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="70" x="253" y="82.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="260" y="104.1426">SYSTEM</text><polygon fill="#A80036" points="58,143.5703,48,147.5703,58,151.5703,54,147.5703" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="52" x2="287" y1="147.5703" y2="147.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="139" x="64" y="142.7139">display reservation page</text><polygon fill="#A80036" points="276,173.9219,286,177.9219,276,181.9219,280,177.9219" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="47" x2="282" y1="177.9219" y2="177.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="76" x="54" y="173.0654">choose show</text><polygon fill="#A80036" points="276,204.2734,286,208.2734,276,212.2734,280,208.2734" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="47" x2="282" y1="208.2734" y2="208.2734"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="190" x="54" y="203.417">choose performance of this show</text><polygon fill="#A80036" points="276,234.625,286,238.625,276,242.625,280,238.625" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="47" x2="282" y1="238.625" y2="238.625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="217" x="54" y="233.7686">choose row and number for each seat</text><polygon fill="#A80036" points="276,264.9766,286,268.9766,276,272.9766,280,268.9766" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="47" x2="282" y1="268.9766" y2="268.9766"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="113" x="54" y="264.1201">click confirm button</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="288" x2="330" y1="299.3281" y2="299.3281"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="330" x2="330" y1="299.3281" y2="312.3281"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="289" x2="330" y1="312.3281" y2="312.3281"/><polygon fill="#A80036" points="299,308.3281,289,312.3281,299,316.3281,295,312.3281" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="43" x="295" y="294.4717">validate</text><path d="M13,327.3281 L74,327.3281 L74,335.3281 L64,345.3281 L13,345.3281 L13,327.3281 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="248.6484" style="stroke: #000000; stroke-width: 2.0;" width="442" x="13" y="327.3281"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="16" x="28" y="341.8232">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="61" x="89" y="340.7471">[no errors]</text><path d="M243,352.6797 L316,352.6797 L316,360.6797 L306,370.6797 L243,370.6797 L243,352.6797 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="61.7031" style="stroke: #000000; stroke-width: 2.0;" width="202" x="243" y="352.6797"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="258" y="367.1748">loop</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="288" x2="330" y1="393.3828" y2="393.3828"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="330" x2="330" y1="393.3828" y2="406.3828"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="289" x2="330" y1="406.3828" y2="406.3828"/><polygon fill="#A80036" points="299,402.3828,289,406.3828,299,410.3828,295,406.3828" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="138" x="295" y="388.5264">create new performance</text><polygon fill="#A80036" points="58,439.7344,48,443.7344,58,447.7344,54,443.7344" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="52" x2="287" y1="443.7344" y2="443.7344"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="144" x="64" y="438.8779">display succes message</text><rect fill="#FFFFFF" height="42.7031" style="stroke: #000000; stroke-width: 2.0;" width="306" x="20" y="451.7344"/><polygon fill="#EEEEEE" points="20,451.7344,82,451.7344,82,459.7344,72,469.7344,20,469.7344,20,451.7344" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="17" x="33" y="467.2295">ref</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="159" x="93.5" y="487.2295">SSD_RESERVATION_LIST</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="13" x2="455" y1="500.4375" y2="500.4375"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="18" y="511.8564">[else]</text><polygon fill="#A80036" points="58,533.625,48,537.625,58,541.625,54,537.625" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="52" x2="287" y1="537.625" y2="537.625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="86" x="64" y="532.7686">display error(s)</text><polygon fill="#A80036" points="276,563.9766,286,567.9766,276,571.9766,280,567.9766" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="47" x2="282" y1="567.9766" y2="567.9766"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="54" y="563.1201">*/ retry */</text><!--
+@startuml SSD_RESERVATION_CREATE
+
+    title SSD_RESERVATION_CREATE
+
+    hide footbox
+    skinparam shadowing false
+
+    actor ADMIN as A
+    participant SYSTEM as S
+
+    S->A :  display reservation page
+    A->S : choose show
+    A->S: choose performance of this show
+    A->S: choose row and number for each seat
+
+    A->S : click confirm button
+
+    S->S : validate
+
+    alt no errors
+        loop
+        S->S : create new performance
+        end
+        S->A : display succes message
+        ref over A,S : SSD_RESERVATION_LIST
+
+    else else
+
+        S->A : display error(s)
+        A->S : */ retry */
+
+
+    end
+
+@enduml
+
+PlantUML version 1.2019.09(Mon Aug 26 18:19:51 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_221-b11
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: fr
+Country: FR
+--></g></svg>

@@ -1,0 +1,46 @@
+@startuml SD_RESERVATION_LIST
+
+    title SD_RESERVATION_LIST
+    hide footbox
+
+    Actor "Admin" as A
+    Participant ":ReservationListView" as RLV
+    Participant ":Routeur" as R
+    Participant ":ReservationController" as RC
+    Participant "Reservation" as Res <<class>>  
+
+    A->R : [GET]/reservation/list/<idCustomer>/[<filter>] 
+    
+
+    create RC
+    R->RC :  list(filter, idCustomer : string = "", int)
+    RC->Res : getFiltered(filter,idCustomer):Reservation[]
+    Res->RC : reservations
+    create RLV
+    RC->RLV : new(reservations)
+
+    alt  
+
+        A->RLV : setFilter(value: string)
+        A->RLV : applyFilter()
+        RLV->R : [GET]/reservation/list/<idCustomer>/<filter>
+        ref over R : SD_RESERVATION_LIST
+
+    else
+
+        A->RLV : delete(idReservation:int)
+        RLV->R : [GET]/reservation/delete/<idReservation>
+        ref over R : SD_RESERVATION_DELETE
+
+    else 
+
+        A->RLV : create()
+        RLV->R : [GET]/reservation/create/<idCustomer>
+        ref over R : SD_RESERVATION_CREATE
+    else 
+        A->RLV : back()
+        RLV->R : [GET]/customer/read/<idCustomer>
+        ref over R : SD_CUSTOMER_READ
+    end
+
+@enduml

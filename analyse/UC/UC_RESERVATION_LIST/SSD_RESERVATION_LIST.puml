@@ -1,0 +1,20 @@
+@startuml
+hide footbox
+skinparam shadowing false
+actor admin as G
+participant test as t
+participant système as S
+S->S : get list of reservation
+S->G : display reservation list
+alt 
+G->S : give filter
+G->S : click apply button
+ref over G,S : SSD_RESERVATION_LIST 
+G->S : click delete reservation
+create t
+S -> t : test
+ref over G,S : SSD_RESERVATION_DELETE
+G->S : click add button
+ref over G,S  : SSD_RESERVATION_CREATE
+end  
+@endum

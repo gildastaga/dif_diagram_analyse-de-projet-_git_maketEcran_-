@@ -1,0 +1,19 @@
+@startuml SSD_PERFORMANCE_LIST
+    title SSD_PERFORMANCE_LIST
+    hide footbox
+    Actor "Admin" as A
+    Participant "Systeme" as S
+    S -> S : get filtered list of performances
+    S -> A : display customers found
+    alt
+    A -> S : give filter
+    A -> S : click apply button
+    ref over A,S : SSD_PERFORMANCE_LIST
+    else
+    A -> S : click delete button
+    ref over A,S : SSD_PERFORMANCE_DELETE
+    else
+    A->S : click add new performance button
+    ref over A,S : SSD_PERFORMANCE_CREATE
+    end
+@enduml

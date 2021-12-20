@@ -1,0 +1,34 @@
+@startuml SD_CUSTOMER_LIST
+title SD_CUSTOMER_LIST
+hide footbox
+    Actor "Admin" as U
+    Participant ":CustomerListView" as ML
+    Participant ":Routeur" as R
+    Participant ":CustomerController" as CC
+    Participant "Customer" as M <<class>>
+
+    -> R : [GET]/customer/list/[<filter>]
+    create CC
+    R -> CC : list(filter : string = "")
+    CC -> M : getFiltered(filter) : Customer[]
+    M --> CC  : customers
+    create ML
+    CC -> ML : new(customers)
+    alt 
+    U -> ML : setFilter(value : string)
+    U -> ML : applyFilter()
+    ML -> R : [GET]/customer/list/<filter>
+    ref over R : SD_CUSTOMER_LIST
+    else
+    U -> ML : read(idCustomer)
+    ML -> R : [GET]/customer/read/<idCustomer>
+    ref over R : SD_CUSTOMER_READ
+    else
+    U -> ML : create()
+    ML -> R : [GET]/customer/create
+    ref over R : SD_CUSTOMER_CREATE
+    |||
+
+    end
+    
+@enduml

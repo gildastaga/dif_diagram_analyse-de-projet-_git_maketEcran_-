@@ -1,0 +1,36 @@
+@startuml SD_CUSTOMER_DELETE
+title SD_CUSTOMER_DELETE
+hide footbox
+Actor "Admin" as A
+Participant ":CustomerDeleteView" as CD
+Participant ":Routeur" as R
+Participant ":CustomerController" as CC
+Participant ":CustomerController" as CC2
+Participant "Customer" as C <<class>>
+Participant "customer : Customer" as c
+-> R : [GET]/customer/delete/<idCustomer>
+create CC
+R -> CC : delete(idCustomer)
+CC -> C : getCustomer(idCustomer) : Customer
+C --> CC : customer
+create CD
+CC -> CD : new (customer)
+alt
+A -> CD : confirm()
+CD -> R : [POST]/customer/delete/<idCustomer>
+create CC2
+R -> CC2 : delete(idCustomer)
+CC2 -> C : getCustomer(idCustomer) : Customer
+create c 
+C -> c : new ()
+C --> CC2 : customer
+CC2 -> c : delete()
+c -> c : deleteRelatedReservations()
+CC2 -> R : [GET]/customer/list
+else 
+A -> CD : cancel()
+CD  -> R : [GET]/customer/list
+end
+ref over R : SD_CUSTOMER_LIST
+
+@enduml

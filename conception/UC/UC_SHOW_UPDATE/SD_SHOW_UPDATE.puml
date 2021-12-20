@@ -1,0 +1,59 @@
+@startuml SD_SHOW_UPDATE
+
+title SD_SHOW_UPDATE
+
+skinparam shadowing TRUE
+hide footbox
+
+actor Admin as a
+participant ": ShowUpdateView" as V
+participant ": Router" as R
+participant ": ShowController" as RC0
+participant ": ShowController" as RC1
+participant "Show" as CR <<class>>
+participant "show : Show" as E1
+
+-> R : [GET] /show/update/<idShow>
+
+create RC0
+R -> RC0 : update(idShow)
+
+
+
+RC0 -> CR : getShow(idShow) : Show
+CR --> RC0 : show
+
+create V
+RC0 -> V : new(show)
+
+
+
+a -> V :setTitle(value: String)
+a -> V :setDescription(value: String)
+a -> V :setDuration(value: int)
+a -> V :setPicture(value: String)
+a -> V :setPerformer(value: String[])
+alt
+
+a -> V : update()
+V -> R : [GET] show/update/<idShow,...>
+create RC1
+R -> RC1 : update(idShow,...)
+
+RC1 -> CR : getShow(idShow) : Show
+create E1
+CR -> E1 : new()
+CR --> RC1 : show
+RC1 -> E1 : update(...)
+RC1 -> R : [GET] /show/read/<idShow>
+
+
+else 
+
+a -> V : cancel()
+V -> R : [GET] /show/read/<idShow>
+
+end 
+
+ref over R : SD_SHOW_READ
+@enduml

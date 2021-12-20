@@ -1,0 +1,15 @@
+@startuml SSD_SHOW_DELETE
+    title SSD_SHOW_DELETE
+    hide footbox
+    Actor "Admin" as A
+    Participant "Systeme" as S
+    S -> A : display confirmation page
+    alt
+    A -> S : click confirm button
+    S -> S : delete
+    S -> S : delete related performances
+    else
+    A -> S : click cancel button
+    end
+    ref over A,S : SSD_SHOW_LIST
+@enduml

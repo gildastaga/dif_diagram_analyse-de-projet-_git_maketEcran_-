@@ -1,0 +1,325 @@
+@startuml CDL
+
+title CDL
+
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam minClassWidth 100
+skinparam linetype ortho
+
+' hide methods
+' hide attributes
+
+rectangle Framework {
+    class Router
+    {
+
+    }
+}
+rectangle Controllers {
+    abstract class Controller
+    
+    class CustomerController { 
+        + delete(idCustomer : int)
+        + list(filter : string)
+        + read(idCustomer : int)
+        + update(idCustomer : int)
+        + update(idCustomer,... : int,...)
+        + create()
+        + create(...)
+    }
+    class PerformanceController
+    {
+        + list(filter, idShow : string, int)
+        + delete(idPerf : int)
+        + create(idShow)
+        + create(idShow, ... : int,...)
+    }
+     class ReservationController
+    {
+        + list(filter, idCustomer : string, int)
+        + delete(idReservation : int)
+        + create(idCustomer : int)
+        + create(idCustomer,... : int,...)
+    }
+     class ShowController
+    {
+        + list(filter : string)
+        + update(idShow : int)
+        + update(idShow,... : int,string,...)
+        + read(idShow : int)
+        + delete(idShow : int)
+        + create()
+        + create(...)
+    }
+
+    Controller <|-- CustomerController
+    Controller <|-- PerformanceController
+    Controller <|-u- ReservationController
+     Controller <|-u- ShowController
+}
+
+rectangle Views {
+    abstract class View
+    
+    class CustomerUpdateView
+    {
+        - customer : Customer
+        - firstName : string
+        - lastName : string
+        - address : string 
+        - city : string 
+        - zip : string 
+        - country : string 
+        - dateOfBirth : string 
+        + constructor(customer : Customer)
+        + constructor(errors : Error[])
+        + update()
+        + cancel()
+
+
+    }
+    class CustomerReadView
+    {
+        - customer : Customer
+        + constructor(customer : Customer)
+        + delete()
+        + update()
+        + list()
+    }
+    class CustomerListView { 
+        - filter : string 
+        + constructor(customers: Customer[])
+        + setFilter(value : string)
+        + applyFilter()
+        + read(idCustomer : int)
+        + create()
+    }
+
+    class CustomerDeleteView {
+        - customer : Customer
+        + constructor(customer: Customer)
+        + confirm()
+        + cancel()
+    }
+
+    class CustomerCreateView {
+        - firstName : string
+        - lastName : string
+        - address : string 
+        - city : string 
+        - zip : string 
+        - country : string 
+        - dateOfBirth : string 
+        + constructor(errors, ... : Error[], ...)
+        + create()
+        + cancel()
+    }
+    class PerformanceListView
+    {
+        - filter : string
+        - idShow : int
+        + constructor(performances : Performance[])
+        + setFilter(value : string)
+        + applyFilter()
+        + delete(idPerf : int)
+        + create()
+    }
+    class PerformanceCreateView
+    {
+        - theaters : Theater[]
+        - idShow : int 
+        - theater : Theater
+        - beginDate : Date
+        - endDate : Date
+        - time : int 
+        + constructor (theaters, idShow : Theater[], int)
+        + constructor (errors : Error[])
+        + create()
+        + cancel()
+
+    }
+    class PerformanceDeleteView
+    {
+        - perf : Performance
+        + constructor (performmance : Performance)
+        + confirm()
+        + cancel()
+    }
+    class ShowListView
+    {
+        - filter : string 
+        + constructor(shows : Show[])
+        + setFilter(value : string)
+        + applyFilter()
+        + read(idShow : int)
+        + create()
+    }
+    class ShowDeleteView
+    {
+        - Show : show
+        + constructor (show : Show)
+        + confirm()
+        + cancel()
+    }
+    class ShowUpdateView
+    {
+        - Show : show
+        - title : string 
+        - description : string 
+        - duration : int 
+        - performers : String[]
+        - picture_path : string 
+        + constructor (show : Show)
+        + constructor (errors : Error[])
+        + update()
+        + cancel()
+
+
+    }
+    class ShowCreateView{
+        - title : string 
+        - description : string 
+        - duration : int 
+        - performers : String[]
+        - picture_path : string 
+        + constructor(errors : Error[])
+        + create()
+        + cancel()
+    }
+    class ShowReadView
+    {
+        - Show : show
+        + constructor(show : Show)
+        + delete()
+        + update()
+        + list ()
+    }
+    class ReservationCreateView
+    {
+        - theaters : Theater
+        - idCustomer : int 
+        - theater : Theater
+        - show : Show
+        - seats : Seat[]
+        + constructor(theaters,shows, idCustomer : Theater[],Show[], int)
+        + constructor (errors : Error[])
+        + confirm()
+        + cancel()
+    }
+    class ReservationDeleteView
+    {
+        - reservation : Reservation
+        + constructor(reservation : Reservation)
+        + confirm()
+        + cancel()
+    }
+    class ReservationListView
+    {
+        - filter : string 
+        + constructor(reservations : Reservation[])
+        + setFilter(value : string)
+        + applyFilter()
+        + delete(idReservation : int)
+        + create()
+        + back()
+    }
+     View <|-r- ReservationListView
+    View <|-r- ReservationDeleteView
+    View <|-r- ReservationCreateView
+    View <|-d- ShowDeleteView
+    View <|-d- ShowCreateView
+    View <|-d- ShowReadView
+    View <|-d- ShowUpdateView
+    View <|-l- PerformanceCreateView
+    View <|-u- CustomerListView
+    View <|-u- CustomerUpdateView
+    View <|-u- CustomerReadView
+    View <|-u- CustomerDeleteView
+    View <|-u- CustomerCreateView
+    View <|-l- PerformanceListView
+     View <|-l- PerformanceDeleteView
+      View <|-d-ShowListView
+  
+}
+
+rectangle Models {
+    abstract class Model
+    
+    class Customer {
+        - idCustomer : int
+        - firstName : string
+        - lastName : string
+        - birthDate : string
+        - address : string
+        - city : string
+        - zip : string
+        - country : string
+        + {static} getCustomer(idCustomer : int) : Customer
+        + validateData() : Error[]
+        - deleteRelatedReservations()
+        + {static} getFiltered(filter : string) : Customer[]
+        + set(idCustomer, ... : int,...)    
+        + delete()
+        + save()
+    }
+    class Performance {
+        - idPerf : int
+        - show : Show 
+        - theater : Theater
+        - date : date 
+        - startTime : time 
+        + {static} getFiltered(filter, idShow : string, int) : Performance[]
+        + {static} validateAll(performances : Performance[]) 
+        + {static} saveAll(performances : Performance[])
+        - findConflicts() : String[]
+        + delete()
+        + save()
+        - deleteRelatedReservations()
+        + {static} getPerformance(idPerf : int) : Performance
+    }
+    class Show {
+        - idShow : int
+        - title : string 
+        - description : string 
+        - duration : int 
+        - picture_path : string
+        - performers : string[]
+        + {static} getFiltered(filter : string) : Show[]
+        + {static} getShow (idShow : int) : Show
+        + {static} getShows () : Show[]
+        + validateData() : Error[]
+        + delete ()
+        + update(...)
+        + save ()
+        - deleteRelatedPerformances()
+    }
+    class Reservation
+    {
+        - idReservation : int
+        - seat : Seat
+        - customer: Customer
+        - performance : Performance
+        - timeStamp : datetime
+        + {static} getFiltered(filter, idCustomer : string, int) : Reservation[]
+        + {static} getReservation(idReservation : int) : Reservation
+        + {static} validateAll(reservations : Reservation[])
+        + {static} saveAll(reservations : Reservation[])
+        - findConflicts() : String[]
+        + delete()
+
+    }
+
+    Model <|-l- Customer
+    Model <|-r- Performance
+    Model <|-- Reservation
+    Model <|-- Show
+}
+
+Controllers ..>  Views
+Views ..> Models
+Router ..> Controllers
+Controllers ..> Models
+
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml SSD_SHOW_LIST
+title SSD_SHOW_LIST
+hide footbox
+Actor "Admin" as A
+Participant "Systeme" as S
+S -> S : get filtered list of shows
+S -> A : display shows found
+alt
+    A -> S : give filter
+    A -> S : click apply button
+    ref over A,S : SSD_SHOW_LIST
+else
+    A -> S : click read button
+    ref over A,S : SSD_SHOW_READ
+else
+    A-> S : click add new show button
+    ref over A,S : SSD_SHOW_CREATE
+end
+
+@enduml

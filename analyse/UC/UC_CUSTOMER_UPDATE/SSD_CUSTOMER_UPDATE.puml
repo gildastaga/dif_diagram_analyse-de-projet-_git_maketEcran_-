@@ -1,0 +1,37 @@
+@startuml SSD_CUSTOMER_UPDATE
+
+    title SSD_CUSTOMER_UPDATE
+
+    hide footbox
+    skinparam shadowing false
+
+    actor ADMIN as A
+    participant SYSTEM as S
+
+    S->A : Display "Customer update" page
+    A->S : Give last name
+    A->S : Give fist name
+    A->S : Give birthdate
+    A->S : Give adress
+    A->S : Give zip
+    A->S : Give city
+    A->S : Select country
+
+   
+    alt 
+     A->S:   confirm()
+      S->S : validate data
+         alt   no errors 
+            S->S : update customer  
+            ref over S,S : SSD_CUSTOMER_LIST
+        else else 
+            S->A: display errors
+            A->S :/* retry */
+        end 
+    else
+        A->S : cancel()
+        ref over S,S : SSD_CUSTOMER_LIST
+    end    
+    
+
+@enduml

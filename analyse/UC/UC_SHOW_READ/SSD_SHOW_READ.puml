@@ -1,0 +1,30 @@
+@startuml SSD_SHOW_READ
+
+title SSD_SHOW_READ
+
+skinparam shadowing false
+hide footbox
+
+actor Admin as a
+participant System as S
+
+S -> a :  show read page 
+
+alt 
+
+a -> S : click  button delete
+ref over a,S : SSD_SHOW_DELETE
+
+else 
+
+a -> S : click button update
+ref over a,S : SSD_SHOW_UPDATE
+
+else
+a -> S :click button performance_List
+ref over a,S : SSD_PERFORMANCE_LIST
+
+end
+
+
+@enduml

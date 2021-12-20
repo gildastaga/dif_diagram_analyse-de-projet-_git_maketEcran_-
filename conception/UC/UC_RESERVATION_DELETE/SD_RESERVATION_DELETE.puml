@@ -1,0 +1,51 @@
+@startuml SD_RESERVATION_DELETE
+
+title SD_RESERVATION_DELETE
+
+skinparam shadowing TRUE
+hide footbox
+
+actor Admin as a
+participant ": ReservationDeleteView" as V
+participant ": Router" as R
+participant ": ReservationController" as RC0
+participant ": ReservationController" as RC1
+participant "Reservation" as CR <<class>>
+participant "Reservation : Reservation" as E1
+
+-> R : [GET] /reservation/delete/<idReservation>
+
+create RC0
+R -> RC0 : delete(idReservation)
+
+
+
+RC0 -> CR : getReservation(idReservation) : Reservation
+CR --> RC0 : reservation
+
+create V
+RC0 -> V : new(reservation)
+
+alt 
+
+a -> V : confirm()
+V -> R : [POST] reservation/delete/<idReservation>
+create RC1
+R -> RC1 : delete(idReservation)
+
+RC1 -> CR : getReservation(idReservation) : Reservation
+create E1
+CR -> E1 : new()
+CR --> RC1 : reservation
+RC1 -> E1 : delete()
+RC1 -> R : [GET] /reservation/list/<idCustomer>
+
+else 
+
+a -> V : cancel()
+V -> R : [GET] /reservation/list/<idCustomer>
+
+end 
+ref over R : SD_RESERVATION_LIST 
+
+@enduml

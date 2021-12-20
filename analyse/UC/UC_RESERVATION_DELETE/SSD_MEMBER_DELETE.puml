@@ -1,0 +1,34 @@
+@startuml SSD_RESERVATIONS_DELETE
+
+title SSD_RESERVATIONS_DELETE
+
+skinparam shadowing false
+hide footbox
+
+actor Admin as a
+participant System as S
+
+
+
+
+
+S -> a : display confirmation page 
+
+alt 
+
+a -> S : click confirm button
+S -> S : delete
+
+else 
+
+a -> S : click cancel button
+
+end 
+
+
+
+ref over a,S : SSD_RESERVATION_LIST
+
+
+
+@enduml

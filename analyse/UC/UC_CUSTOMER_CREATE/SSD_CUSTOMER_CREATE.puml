@@ -1,0 +1,23 @@
+@startuml SSD_CUSTOMER_CREATE
+title SSD_CUSTOMER_CREATE
+hide footbox
+ Actor "Admin" as A
+ Participant "Systeme" as S
+ S -> A : show create page
+ A -> S : give firstName
+ A -> S : give lastName
+ A -> S : give address
+ A -> S : give zip
+ A -> S : give city
+ A -> S : give date of birth
+ A -> S : click create button
+ S-> S : validate
+ alt no errors 
+    S -> S : create new customer
+    ref over A,S : SSD_CUSTOMER_LIST
+
+ else else
+ S -> A : display errors
+ A --> S : */ retry */
+ end  
+ @enduml

@@ -1,0 +1,53 @@
+@startuml SD_SHOW_READ
+
+title SD_SHOW_READ
+
+skinparam shadowing TRUE
+hide footbox
+
+actor Admin as a
+participant ": ShowReadView" as V
+participant ": Router" as R
+participant ": ShowController" as SC
+participant "Show" as SR <<class>>
+
+-> R : [GET] /show/read/<idshow>
+
+create SC
+R -> SC : read(idshow)
+
+
+
+SC -> SR : getShow(idShow) : Show
+SR --> SC : show
+
+Create V
+SC -> V : new(show)
+
+alt
+a->V : delete()
+V-> R :[GET]/show/delete/<idshow>
+
+ref over R : SD_SHOW_DELETE
+
+else 
+a->V : update()
+V-> R :[GET]/show/update/<idshow>
+
+ref over R : SD_SHOW_UPDATE
+
+else
+a-> V:  list()
+V-> R : [GET]/performance/list/<idShow>
+
+ref over R : SD_PERFORMANCE_LIST
+else
+a-> V:  back()
+V-> R : [GET]/show/list/
+
+ref over R : SD_SHOW_LIST
+
+
+end
+
+@enduml

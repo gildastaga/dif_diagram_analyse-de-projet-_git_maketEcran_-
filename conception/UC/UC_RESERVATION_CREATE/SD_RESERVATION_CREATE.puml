@@ -1,0 +1,61 @@
+@startuml SD_RESERVATION_CREATE
+
+    title SD_RESERVATION_CREATE
+    hide footbox
+    skinparam shadowing false
+
+    Actor "Admin" as A
+    Participant ":ReservationCreateView" as RCV
+    Participant ":ReservationCreateView" as RCV1
+    Participant ":Routeur" as R
+    Participant ":ReservationController" as RC
+    Participant "Theater" as TC<<class>>
+    Participant "Show" as SC<<class>>
+      Participant ":ReservationController" as RC1
+      Participant "Reservation" as CR <<class>>
+      Participant "reservation : Reservation" as r
+
+    --> R : [GET]/reservation/create/<idCustomer>
+    create RC
+    R -> RC : create(idCustomer)
+    RC -> TC : getTheaters() : Theater[]
+    TC --> RC : theaters
+    RC ->  SC : getShows() : Show[]
+    SC -> RC : shows
+    create RCV 
+    RC -> RCV : new(theaters,shows,idCustomer)
+    A -> RCV : setTheater(theater : Theater)
+    A -> RCV : setShow(show : Show)
+    A -> RCV : setSeats(seats : Seat[])
+    alt 
+    A -> RCV : confirm()
+    RCV -> R : [GET]/reservation/create/<idCustomer,...>
+    create RC1
+    R -> RC1 : create(...)
+    loop for each seat 
+    create r
+    RC1 -> r : new(...)
+    end 
+    RC1 ->  CR : validateAll(reservations)
+    CR -> CR : findConflicts() : String[]
+    CR --> RC1 : errors
+    alt errors == []
+    RC1 -> CR : saveAll(reservations)
+    RC1 -> R : [GET]/reservation/list/<idCustomer>
+    ref over R : SD_RESERVATION_LIST
+    else 
+    create RCV1 
+    RC1 -> RCV1 : new (errors)
+    A -> RCV1 : /* retry */
+    end
+    else 
+    A -> RCV : cancel()
+    RCV -> R : [GET]/reservation/list/<idCustomer>
+    ref over R : SD_RESERVATION_LIST
+    end 
+
+
+    
+
+  
+@enduml

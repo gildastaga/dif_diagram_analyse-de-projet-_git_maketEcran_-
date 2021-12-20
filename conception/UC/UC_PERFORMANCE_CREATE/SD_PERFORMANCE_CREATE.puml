@@ -1,0 +1,76 @@
+@startuml SD_PERFORMANCE_CREATE
+title SD_PERFORMANCE_CREATE
+hide footbox
+Actor "Admin" as A
+
+Participant ":PerformanceCreateView" as PCV
+Participant ":PerformanceCreateView" as PCV2
+Participant ":Routeur" as R
+Participant ":PerformanceController" as PC
+Participant "Theater" as TH<<class>>
+Participant ":PerformanceController" as PC2
+Participant " performance: Performance" as P
+Participant "  Performance" as tc<<class>>
+
+
+A-> R : [GET]/performance/create/<idShow>
+
+create  PC
+R -> PC : create(idShow)
+
+
+PC -> TH : getTheaters() : Theater[]
+TH --> PC : theaters
+
+
+create PCV
+PC -> PCV : new(theaters,idShow)
+A->PCV :setTheatre(theater:Theater)
+A->PCV :setBeginDate(date:Date)
+A->PCV :setEndDate(date:Date)
+A->PCV :setTime(time:int)
+
+alt
+    A->PCV :create()
+    PCV -> R : [POST]/performance/create/<...,idShow>
+
+    create PC2
+    R->PC2:create(idShow,...)
+
+
+
+    loop  foreach performances
+
+        create P
+        PC2->P: new (...)
+        end
+        
+        PC2->tc:validateAll(performances)
+        tc->tc:findConflicts():String[]
+        tc-->PC2: errors
+      
+        
+    
+
+
+    alt errors ==[]
+        PC2->tc:saveAll(performances)
+        PC2-->R:[GET]/performance/list/<idShow>
+        ref over R: SD_PERFORMANCE_LIST
+    else else
+        create PCV2
+        PC-> PCV2 :new (errors)
+        
+        A-> PCV2 :/*retry*/
+
+    end
+
+else else
+    A->PCV:cancel()
+    PCV-> R: [GET]/performance/list/<idShow>
+    ref over R: SD_PERFORMANCE_LIST
+end
+
+
+
+@enduml

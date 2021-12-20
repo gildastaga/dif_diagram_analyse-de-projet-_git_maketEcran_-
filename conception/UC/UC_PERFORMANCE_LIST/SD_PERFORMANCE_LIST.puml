@@ -1,0 +1,30 @@
+@startuml SD_PERFORMANCE_LIST
+title SD_PERFORMANCE_LIST
+hide footbox
+Actor "Admin" as A
+Participant ":PerformanceListView" as PL
+Participant ":Routeur" as R
+Participant ":PerformanceController" as PC
+Participant "Performance"  as P <<class>>
+-> R : [GET]/performance/list/<idShow>/[<filter>]
+create PC
+R -> PC : list(filter, idShow : string = "",int)
+PC -> P : getFiltered(filter, idShow) : Performance[]
+P --> PC : performances
+create PL 
+PC -> PL : new(performances)
+alt 
+A -> PL : setFilter(value : string)
+A -> PL : applyFilter()
+PL -> R : [GET]/performance/list/<idShow>/<filter>
+ref over R : SD_PERFORMANCE_LIST
+else
+A -> PL : delete(idPerf : int)
+PL -> R : [GET]/performance/delete/<idPerf>
+ref over R : SD_PERFORMANCE_DELETE
+else
+A -> PL : create()
+PL ->R : [GET]/performance/create/<idShow>
+ref over R : SD_PERFORMANCE_CREATE
+end
+@enduml
